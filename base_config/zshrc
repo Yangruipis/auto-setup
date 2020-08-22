@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git wd history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,7 +131,6 @@ alias gitd='git difftool --tool=ediff '
 alias gitc='git checkout'
 alias condaa='conda activate'
 alias condad='conda deactivate'
-alias ediff='~/ediff.py'
 alias wc='wc -l'
 
 #source /home/ray/mnt/home/scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

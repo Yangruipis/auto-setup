@@ -49,6 +49,9 @@
       )
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; for emacs version < 26.3 bug
+(setq package-check-signature nil)
+
 ;;; Standard package repositories
 ;; We include the org repository for completeness, but don't normally
 ;; use it.
@@ -375,9 +378,9 @@
 
 ;;
 ;; (add-to-list 'load-path "/home/ryang/.emacs.d/elpa/nlinum-mode/")
-;; (require 'nlinum)
-;; (setq nlinum-highlight-current-line t)
-;; (global-nlinum-mode)
+(require 'nlinum)
+(setq nlinum-highlight-current-line t)
+(global-nlinum-mode)
 
 (defun sh-format ()
   "format sh file"
@@ -421,6 +424,7 @@
 
 (global-auto-revert-mode)
 (add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
+(setq package-check-signature nil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -429,12 +433,12 @@
  ;; If there is more than one, they won't work right.
  '(company-backends
    (quote
-    (company-ficus company-anaconda company-bbdb company-eclim company-semantic company-clang company-xcode company-cmake company-capf company-files
+    (company-anaconda company-bbdb company-eclim company-semantic company-clang company-xcode company-cmake company-capf company-files
 		   (company-dabbrev-code company-gtags company-etags company-keywords)
 		   company-oddmuse company-dabbrev)))
  '(package-selected-packages
    (quote
-    (go-mode docker docker-api docker-cli docker-compose-mode dockerfile-mode yapfify yaml-imenu yaml-mode blacken company-anaconda company-tabnine anaconda-mode counsel-etags bracketed-paste multiple-cursors json-mode yafolding spaceline spaceline-all-the-icons vlf highlight-parentheses nlinum-hl nlinum-relative nlinum autopair counsel helm-company find-file-in-project swiper-helm jedi 0blayout thrift isortify undo-tree sphinx-doc sphinx-frontend sphinx-mode pylint flycheck-pyflakes py-yapf virtualenv virtualenvwrapper flycheck ace-window figlet ac-helm ace-jump-mode all-the-icons ace-jump-helm-line auto-complete neotree nyan-mode yasnippet))))
+    (%PACKAGES%))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

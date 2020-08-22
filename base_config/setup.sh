@@ -5,7 +5,7 @@ set -e
 echo "SETUP_REPO_DIR:" ${SETUP_REPO_DIR}
 echo "intall required tools"
 apt-get update &&\
-    apt-get install tmux zsh gawk curl
+    apt-get -y install tmux zsh gawk curl jo jq silversearcher-ag
 
 # tmux
 echo "setup tmux"
@@ -24,9 +24,9 @@ echo "setup zsh"
 if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
-[ ! -f ~/.zshrc ] && cp ${SETUP_REPO_DIR}/base_config/zshrc ~/.zshrc
+cp ${SETUP_REPO_DIR}/base_config/zshrc ~/.zshrc
 
 ## zsh highlight
 echo "  setup zsh highlight"
@@ -37,9 +37,9 @@ sed -i s@%ZSH_SYNTAX_HIGHLIGHT%@${tmp_dir}/zsh-syntax-highlighting.zsh@g ~/.zshr
 
 ## fzf
 echo "  setup fzf"
-if [ ! -d ~/.fzf2 ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf2
-    pushd ~/.fzf2
+if [ ! -d ~/.fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    pushd ~/.fzf
     ./install << EOF
 y
 y
@@ -49,6 +49,5 @@ EOF
 fi
 
 sed -i s@"bindkey '^T' fzf-file-widget"@"bindkey '^Q' fzf-file-widget"@g ~/.fzf/shell/key-bindings.zsh
-
 
 echo "SUCCESS"

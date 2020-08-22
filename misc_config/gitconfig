@@ -1,0 +1,10 @@
+[user]
+    email = r.yang@tianrang-inc.com
+    name = r.yang
+
+[url "git@git.tianrang-inc.com:"]
+     insteadOf = https://git.tianrang-inc.comn
+     insteadOf = http://git.tianrang-inc.com
+
+[difftool "ediff"]
+    cmd = emacs -nw -q --eval \"(progn (setq ediff-split-window-function 'split-window-horizontally)(ediff-files \\\"$LOCAL\\\" \\\"$REMOTE\\\"))\"
