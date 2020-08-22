@@ -1,0 +1,33 @@
+# Install
+
+```
+./setup_all.sh
+```
+
+# Tips
+
+## forwrad clipboard over ssh
+
+### 1. 在本地机器上监听5556端口，执行xsel（以arch linux为例）
+
+```bash
+while (true); do nc -lp 5556 | xsel -b; done
+```
+
+### 2. 登录远程机器时暴露端口
+```bash
+ssh root@xxx -R 5556:localhost:5556
+```
+
+### 3. 远程端口转发
+```bash
+echo "RemoteForward 5556 localhost:5556" >> ~/.ssh/config
+```
+
+### 4. 开始共享剪切板
+
+以下两条命令等价
+```bash
+cat xxx.file | nc -q0 localhost 5556  # 远程机器
+cat xxx.file | xsel -i -b             # 本地机器
+```

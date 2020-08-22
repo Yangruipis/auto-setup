@@ -5,7 +5,7 @@ set -e
 echo "SETUP_REPO_DIR:" ${SETUP_REPO_DIR}
 echo "intall required tools"
 apt-get update &&\
-    apt-get -y install tmux zsh gawk curl jo jq silversearcher-ag
+    apt-get -y install tmux zsh gawk curl jo jq silversearcher-ag netcat
 
 # tmux
 echo "setup tmux"

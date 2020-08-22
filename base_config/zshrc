@@ -132,6 +132,7 @@ alias gitc='git checkout'
 alias condaa='conda activate'
 alias condad='conda deactivate'
 alias wc='wc -l'
+alias xsel2='nc -q0 localhost 5556'
 
 #source /home/ray/mnt/home/scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source %ZSH_SYNTAX_HIGHLIGHT%

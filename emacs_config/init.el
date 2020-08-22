@@ -87,7 +87,8 @@
 	)
     (if (region-active-p)
 	(progn
-	  (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+	  ;; (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+	  (shell-command-on-region (region-beginning) (region-end) "nc -q0 localhost 5556")
 	  (message "Yanked region to clipboard!")
 	  (deactivate-mark))
       (message "No region active; can't yank to clipboard!")))
@@ -270,7 +271,8 @@
       ;; to xsel
       (with-temp-buffer
 	(insert filename)
-	(shell-command-on-region (point-min) (point-max) "xsel -i -b")
+	;; (shell-command-on-region (point-min) (point-max) "xsel -i -b")
+	(shell-command-on-region (point-min) (point-max) "nc -q0 localhost 5556")
 	)
       (message filename))))
 
@@ -376,11 +378,11 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (set 'clean-aindent-is-simple-indent t)
 
-;;
+;; 和campany冲突
 ;; (add-to-list 'load-path "/home/ryang/.emacs.d/elpa/nlinum-mode/")
-(require 'nlinum)
-(setq nlinum-highlight-current-line t)
-(global-nlinum-mode)
+;; (require 'nlinum)
+;; (setq nlinum-highlight-current-line t)
+;; (global-nlinum-mode)
 
 (defun sh-format ()
   "format sh file"

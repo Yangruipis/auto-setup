@@ -16,9 +16,11 @@ pip3 install gpustat
 cp ${SETUP_REPO_DIR}/misc_config/gitconfig ~/.gitconfig
 
 # ediff
-
 if cat ~/.zshr | grep "alias ediff=" >/dev/null; then
-    pass
+    echo "exist"
 else
     echo "alias ediff='${SETUP_REPO_DIR}/misc_config/ediff.py'" >> ~/.zshrc
 fi
+
+# xsel2
+echo "RemoteForward 5556 localhost:5556" > ~/.ssh/config
