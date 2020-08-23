@@ -16,7 +16,7 @@ pip3 install gpustat
 cp ${SETUP_REPO_DIR}/misc_config/gitconfig ~/.gitconfig
 
 # ediff
-if cat ~/.zshr | grep "alias ediff=" >/dev/null; then
+if cat ~/.zshrc | grep "alias ediff=" >/dev/null; then
     echo "exist"
 else
     echo "alias ediff='${SETUP_REPO_DIR}/misc_config/ediff.py'" >> ~/.zshrc
