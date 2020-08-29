@@ -126,6 +126,7 @@
 (global-set-key (kbd "C-x b") 'counsel-buffer-or-recentf)
 ;; ;; make counsel complete after [TAB]
 (define-key ivy-minibuffer-map (kbd "TAB") 'ivy-alt-done)
+(define-key ivy-minibuffer-map (kbd "C-l") 'counsel-up-directory)
 ;; ;; make helm complete after [TAB]
 ;; (with-eval-after-load 'helm
 ;;   (define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
