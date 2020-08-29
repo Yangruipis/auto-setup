@@ -420,6 +420,7 @@
  "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 ;; counsel-etags
+(add-to-list 'load-path "/root/git_repos/auto-setup/emacs_config/elpa/counsel-etags-1.9.11/")
 (add-hook 'c++-mode-hook
        (lambda ()
 	 (local-set-key (kbd "M-.") 'counsel-etags-find-tag-at-point)))
@@ -427,6 +428,10 @@
 (global-auto-revert-mode)
 (add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
 (setq package-check-signature nil)
+
+(add-hook 'go-mode-hook
+       (lambda ()
+	 (local-set-key (kbd "M-.") 'counsel-etags-find-tag-at-point)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
