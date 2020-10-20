@@ -124,9 +124,14 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x b") 'counsel-buffer-or-recentf)
+(setq counsel-find-file-at-point t)
 ;; ;; make counsel complete after [TAB]
 (define-key ivy-minibuffer-map (kbd "TAB") 'ivy-alt-done)
 (define-key ivy-minibuffer-map (kbd "C-l") 'counsel-up-directory)
+
+(require 'ivy-xref)
+(setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
+(setq xref-prompt-for-identifier nil)
 ;; ;; make helm complete after [TAB]
 ;; (with-eval-after-load 'helm
 ;;   (define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
