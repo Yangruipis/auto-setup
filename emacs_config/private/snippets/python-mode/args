@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: args
+# key: args
+# --
+
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--$1")
+parser.add_argument("--$2")
+args = parser.parse_args()
+
+$0

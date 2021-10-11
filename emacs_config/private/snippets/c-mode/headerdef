@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: headerdef
+# key: hdef
+# --
+
+#ifndef ${1:`(google-cpp-header-guard)`_H}
+#define $1
+
+$0
+
+#endif  // $1

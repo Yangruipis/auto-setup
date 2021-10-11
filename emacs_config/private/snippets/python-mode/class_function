@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: class_function
+# key: cf
+# --
+def ${1:fun}(self, ${2:args}):
+$0

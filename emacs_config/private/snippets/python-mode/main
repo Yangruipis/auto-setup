@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: main
+# key: pym
+# --
+
+def main():
+    $0
+
+if __name__ == "__main__":
+    main()

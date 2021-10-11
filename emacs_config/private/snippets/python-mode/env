@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: env
+# key: env
+# --
+# -*- coding: utf-8 -*-
+# @File : `(file-name-nondirectory buffer-file-name)`
+# @Author : r.yang
+# @Date : `(current-time-string)`
+# @Description : ${1:format string}
+
+$0
