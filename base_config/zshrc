@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias pwc='pwd | xsel -b'
+#alias pwc='pwd | xsel -b'
 alias pwv='cd `xsel -b`'
 alias shotwel='shotwell'
 alias sw='shotwell'
@@ -112,7 +112,7 @@ alias pwc='pwd | xsel -b'
 alias pwv='cd `xsel -b`'
 alias shotwel='shotwell'
 alias sw='shotwell'
-alias x='xsel -i -b'
+#alias x='xsel -i -b'
 alias st='shotwell'
 alias cl='clear'
 alias ema='emacsclient -c -nw'
@@ -133,6 +133,8 @@ alias condaa='conda activate'
 alias condad='conda deactivate'
 alias wc='wc -l'
 alias xsel2='nc -q0 localhost 5556'
+alias x='nc -q0 localhost 5556'
+alias pwc='pwd | x'
 
 #source /home/ray/mnt/home/scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source %ZSH_SYNTAX_HIGHLIGHT%
@@ -140,6 +142,7 @@ source %ZSH_SYNTAX_HIGHLIGHT%
 # 使emacs用server启动
 export ALTERNATE_EDITOR=""
 export EDITOR='emacsclient -c -nw'
+export TERM=xterm-256color
 
 git config --add oh-my-zsh.hide-status 1
 
