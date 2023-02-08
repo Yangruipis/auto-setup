@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: curdir
+# key: curdir
+# --
+CUR_DIR = Path(__file__).resolve().parent

@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: typer
+# key: tp
+# --
+
+import typer
+from pathlib import Path
+
+app = typer.Typer()
+
+@app.command()
+def main(
+    input_path: Path = typer.Option(None, help="input path")
+):
+    pass
+
+if __name__ == "__main__":
+   app()

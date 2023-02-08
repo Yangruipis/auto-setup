@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: env
+# key: env
+# --
+#!/bin/bash
+
+set -exo pipefail
